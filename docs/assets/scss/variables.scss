@@ -1,0 +1,41 @@
+/* variables scss */
+
+$white: #fff;
+$black: #232020;
+$blue: #3C82BF;
+$green: #03B029;
+$gray: #767676;
+$dark-gray: #e4e5e633;
+$red: #DC2525;
+$dark-blue: #254F74; 
+$sky-blue: #E7F4FF;
+
+$gray-border: rgb(237, 232, 232);
+$blue-background: #EEF6F8;
+$gray-background: rgba(0, 0, 0, 0.02);
+$border-color:  rgb(220, 215, 215);
+$light-border-color: rgb(240, 238, 238);
+
+$font-style: 'Montserrat';
+
+
+$field-margin-top: 1.25rem;
+$btn-margin-top: 1.75rem;
+$padding-left: 1rem;
+
+$btn-box-shadow: 0rem 0rem 1rem rgba(255, 255, 255, 0.25);
+$txt-shadow: 0rem 0rem .5625rem rgba(0, 0, 0, 0.4);
+$img-box-shadow: 0rem 0rem 0.75rem rgba(0, 0, 0, 0.1);
+$banner-linear-gradient: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.493507) 34.52%, rgba(0, 0, 0, 0.8) 66.07%);
+$pdf-linear-gradient: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 33.89%, rgba(0, 0, 0, 0) 100%);
+
+$small-mobile-max: 30rem;
+$mobile-max: 47.9375rem;
+$tablet-max: 64rem;
+$laptop-max: 90rem;
+
+$font-size-sm: .75rem;
+$font-size-m: .875rem;
+$font-size-lg: 1rem;
+$font-size-xl: 1.25rem;
+$font-size-xxxl: 2.25rem;
