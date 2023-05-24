@@ -1,0 +1,8 @@
+<div class="p-mt-4">
+    <span [class]="'p-float-label ' + cls">
+        <p-calendar [timeOnly]="timeOnly" inputId=" " [minDate]="minDate" [hourFormat]="'24'" [formControl]="control" appendTo="body"
+            [id]="name"></p-calendar>
+        <label [htmlFor]="name">{{ label }}</label>
+        <small *ngIf="control.invalid && control.touched" class="p-error">{{control | validationError: label}}</small>
+    </span>
+</div>

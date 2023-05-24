@@ -1,0 +1,112 @@
+@import "src/styles.scss";
+
+.main-banner-container{
+    position: relative;
+    background-image: url('/assets/img/community_page_background_img.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 24.125rem;
+    background-position: center;
+}
+.main-banner-background-effect{
+    background: $banner-linear-gradient;
+    width: 100%;
+    padding-left: 8%;
+    padding-right: 20%;
+    min-height: 24.125rem;
+    padding-top: 5.75rem;
+    padding-bottom: 3.75rem;
+}
+.main-banner-content{
+    display: contents;
+}
+.main-banner-fields{
+    max-width: 35%;
+    margin-top: 1.375rem;
+}
+.main-banner-heading{
+    p{
+        font-weight: 500;
+        font-size: 2rem;
+        color: $white;
+        text-shadow: $txt-shadow;
+    }
+    span{
+        font-weight: 700;
+    }
+}
+.main-banner-description{
+    margin-top: 1.25rem;
+    font-size: 1rem;
+    color: $white;
+}
+.main-banner-dropdown{
+    margin-top: 1.25rem;
+}
+.main-banner-btn{
+    margin-top: 1.9rem;
+    max-width: 100%;
+    button{
+        width: 100%;
+        height: 3rem;
+        color: $white;
+        font-weight: 600;
+        background: $blue;
+        box-shadow: $btn-box-shadow;
+        border-radius: 6.25rem;
+    }
+}
+@media screen and (max-width: $tablet-max){
+    .main-banner-heading{
+        p{
+            font-size: 1.75rem
+        }
+    }
+    .main-banner-container{
+        min-height: 24rem;
+    }
+    .main-banner-background-effect{
+        height: 24rem;
+        padding-right: 10%;
+    }
+    .main-banner-fields{
+        max-width: 60%;
+    }
+}
+@media screen and (max-width: $mobile-max){
+    .main-banner-container{
+        min-height: 26.5rem;
+    }
+    .main-banner-background-effect{
+        min-height: 26.5rem;
+        padding-left: 5%;
+        padding-right: 5%;
+        text-align: center;
+    }
+    .main-banner-fields{
+        text-align: center;
+        max-width: 60%;
+        margin-left: 18%;
+    }
+}
+@media screen and (max-width: $small-mobile-max){
+    .main-banner-heading{
+        padding-top: 1.5625rem;
+        p{
+            font-size: 1.5rem
+        }
+    }
+    .main-banner-container{
+        height: 23.5rem;
+    }
+    .main-banner-background-effect{
+        height: 23.5rem;
+       padding-top: 2.5rem;
+       padding-bottom: 2.5rem;
+    }
+    .main-banner-fields{
+        text-align: center;
+        max-width: 100%;
+        margin-left: 0;
+    }
+}

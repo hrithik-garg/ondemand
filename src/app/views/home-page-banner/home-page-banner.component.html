@@ -1,0 +1,35 @@
+<section class="main-banner-container">
+    <div class="main-banner-background-effect">
+        <div class="main-banner-content">
+            <div class="main-banner-heading">  
+                <p>
+                    {{'mainBannerHeading.first' | translate}} <br>
+                    {{'mainBannerHeading.second' | translate}} <span>{{'mainBannerHeading.third' | translate}}</span> 
+                </p> 
+            </div>
+            <div class="main-banner-fields p-mt-4">
+                <app-heading 
+                    [text] = "'mainBannerDescription' | translate"
+                    [cls] = "'white-sub-heading'"
+                    [headingType]="'h3'">
+                </app-heading>
+                <div class="input-container">
+                    <app-input 
+                        [type] = "'email'" 
+                        placeholder="{{emailPlaceholder}}"
+                        [showIcon]="true" 
+                        [iconStyleCls]="'exclamation-icon-class'"
+                        [control]="emailSubmitForm.controls['email']">
+                    </app-input>
+                </div>
+            </div>
+            <div class="main-banner-fields">
+                <app-button 
+                    (onClick)=submitRequestModal();
+                    name = '{{"sbmtRequest" | translate}}'
+                    [cls] = "'shadow'">
+                </app-button>
+            </div>
+        </div>
+    </div>
+</section>

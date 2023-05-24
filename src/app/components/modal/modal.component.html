@@ -1,0 +1,36 @@
+<div class="content">
+  <ng-container [ngSwitch]="modalContentType">
+    <ng-container *ngSwitchCase="'HtmlContent'">
+      <ng-container
+        *ngIf="contentTemplate"
+        [ngTemplateOutlet]="contentTemplate"
+      ></ng-container>
+    </ng-container>
+  
+    <ng-container *ngSwitchCase="'StringContent'">
+      <ng-container *ngIf="contentString">
+        <p>
+          {{ contentString }}
+        </p>
+      </ng-container>
+    </ng-container>
+  
+    <ng-container *ngSwitchCase="'DynamicComponent'">
+      <ng-template #dynamicComponent></ng-template>
+    </ng-container>
+  
+    <ng-container *ngSwitchDefault>
+      <span>Invalid Config</span>
+    </ng-container>
+  </ng-container>
+</div>
+<div class="btns-container">
+  <div *ngIf="firstBtnName" class="p-mr-3 p-mt-2">
+    <app-button [name]='firstBtnName' [cls]='firstBtnCls' (onClick)="closeModal(false)">
+    </app-button>
+  </div>
+  <div *ngIf="secondBtnName">
+    <app-button [name]='secondBtnName' [cls]='secondBtnCls' (onClick)="closeModal(true)">
+    </app-button>
+  </div>
+</div>

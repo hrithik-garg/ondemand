@@ -1,0 +1,25 @@
+@import "src/styles.scss";
+
+.mobile-input{
+    margin-top: $field-margin-top;
+    ::ng-deep .iti--allow-dropdown input, .iti--allow-dropdown input[type=tel]{
+        padding-left: 2.625rem !important;
+    }
+    ::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
+        padding-top: .5rem;
+        margin-left: 2.1875rem;
+    }
+    ::ng-deep .iti--allow-dropdown .iti__flag-container, .iti--separate-dial-code .iti__flag-container {
+        right: auto;
+        left: -2.375rem;
+    }
+    ::ng-deep .mat-form-field-label-wrapper {
+        left: 3.125rem !important;
+    }
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-subscript-wrapper{
+    padding: 0 !important;
+}
+::ng-deep .mat-form-field-subscript-wrapper{
+    margin-top: 1.4375rem;
+}

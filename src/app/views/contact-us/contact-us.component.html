@@ -1,0 +1,23 @@
+<section class="contact-container">
+    <div class="branding-content p-grid p-col-12">
+        <div class="contact-left-part p-col-12 p-md-6 p-sm-12">
+            <div class="contact-text">
+                <p>{{'contactPara.first' | translate}}<br> <span>{{'contactPara.second' | translate}}</span></p>
+            </div>
+        </div>
+        <form name="form" [formGroup]="emailSubmitForm">
+            <div class="contact-right-part p-col-12 p-md-6 p-sm-12">
+                <app-input 
+                    [type] = "'text'" 
+                    placeholder="{{emailPlaceholder}}"
+                    [control]="emailSubmitForm.controls['email']">
+                </app-input>
+                <app-button 
+                    name = '{{"sbmtRequest" | translate}}'
+                    [cls] = "'dark-blue-btn'"
+                    (onClick)=submitRequestModal();>
+                </app-button>
+            </div>
+        </form>    
+    </div>
+</section>

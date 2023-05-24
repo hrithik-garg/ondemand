@@ -1,0 +1,49 @@
+@import "src/styles.scss";
+
+:host ::ng-deep .p-float-label {
+    label {
+        top: 30%;
+        color: $black !important;
+        font-weight: 500;
+    }
+
+    .p-inputwrapper-focus~label,
+    .p-inputwrapper-filled~label {
+        top: 0rem;
+        font-weight: 600;
+        left: 0.3rem;
+        font-size: 0.75rem;
+        padding-right: 0.25rem;
+        padding-left: 0.25rem;
+        color: $blue;
+        background: $white;
+        margin-left: 0.64rem;
+        margin-right: 0.125rem;
+        font-weight: 500 !important;
+    }
+    .p-inputwrapper-focus~label{
+        color: $blue !important;
+        font-weight: 600 !important;
+    }
+
+}
+
+::ng-deep .p-inputtext:enabled:focus {
+    box-shadow: none;
+    border: 0.125rem solid $blue !important;
+    border-radius: 0.4rem;
+}
+
+::ng-deep .p-calendar .p-inputtext {
+    border-radius: 0.4rem;
+    padding-left: $padding-left;
+}
+
+.p-error {
+    width: 4.75rem;
+    height: 1rem;
+    font-weight: 500;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    color: $red;
+}

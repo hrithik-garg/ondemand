@@ -1,0 +1,65 @@
+    <div class="verify-part">
+        <div class="field-margin">
+            <app-heading
+                [text] = "'verification' | translate"
+                [headingType]="'h4'">
+            </app-heading>
+        </div>
+        <div class="field-margin">
+            <app-description 
+                [text] = "'enterPhonenoDescription' | translate" >
+            </app-description>
+        </div>
+        
+        <app-mobile-no-input
+            label = "Phone Number"
+            [control] = "verifyForm.controls['mobileNumber']"
+            (onChange) = changeCountryCode($event)>
+        </app-mobile-no-input>
+
+        <div *ngIf="!isOtpSend">
+            <app-button
+                [name] = "'sendOTP' | translate" 
+                (onClick)="generateOtpForRegisteredUser()">
+            </app-button>
+        </div>
+
+        <div *ngIf="isOtpSend">
+            <app-input 
+                [type] = "'text'" 
+                [label] = "'otp' | translate" 
+                [control] = "verifyForm.controls['otp']"
+                [placeholder]="'enterOTP' | translate" 
+                [inputType]="'formField'">
+            </app-input>
+        </div>
+
+        <div *ngIf="isOtpSend && !isUserNew">
+            <app-button
+                [name] = "'requestRide' | translate" 
+                (onClick)="validateRegisteredUser()">
+            </app-button>
+        </div>
+
+        <div *ngIf="isUserNew">
+            <div class="p-mt-5">
+                <app-heading
+                    [text] = "'personalDetails' | translate"
+                    [headingType]="'h4'">
+                </app-heading>
+            </div>
+            <app-mat-input 
+                [label] = "'firstName' | translate" 
+                [placeholder] = "'firstName' | translate"
+                [control] = "verifyForm.controls['firstName']"></app-mat-input>
+            <app-mat-input
+                [label] = "'lastName' | translate" 
+                [placeholder] = "'lastName' | translate"
+                [control] = "verifyForm.controls['lastName']">
+            </app-mat-input>
+            <app-button
+                [name] = "'requestRide' | translate" 
+                (onClick)="registerNewUser()">
+            </app-button>
+        </div>
+    </div>

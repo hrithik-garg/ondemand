@@ -1,0 +1,26 @@
+@import "src/styles.scss";
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-subscript-wrapper {
+    padding: 0 !important;
+}
+
+::ng-deep .mat-form-field-subscript-wrapper {
+    margin-top: 1.4375rem;
+}
+
+::ng-deep .mat-form-field-appearance-outline.mat-form-field-disabled .mat-form-field-outline {
+    color: $black
+}
+
+::ng-deep .mat-input-element:disabled{
+    color: $black !important;
+}
+::ng-deep .mat-form-field-suffix{
+    color: $blue;
+    cursor: pointer;
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-suffix{
+    background-color: $white;
+    padding-left: 1.5625rem;
+    top: 0 !important;
+}

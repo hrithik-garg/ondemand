@@ -1,0 +1,65 @@
+@import "src/styles.scss";
+
+.pdf-container{
+    position: relative;
+    min-height: 26.5rem;
+    background-image: url('/assets/img/cars_background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+}
+.pdf-content{
+    background: $pdf-linear-gradient;
+    min-height: 26.5rem;
+    width: 100%;
+}
+.pdf-inner-content{
+    padding-left: 8%;
+    padding-right: 63%;
+    padding-top: 3.75rem;
+}
+.pdf-dropdowns{
+    max-width: 100%;
+    margin-top: 1.25rem;
+}
+.pdf-heading{
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: $white;
+}
+.pdf-btn{
+    max-width: 100%;
+    button{
+        width: 100%;
+        height: 3rem;
+        background: $blue;
+        color: $white;
+        font-weight: 600;
+        box-shadow: $btn-box-shadow;
+        border-radius: 6.25rem;
+    }
+}
+
+@media screen and (max-width: $tablet-max){
+  
+    .pdf-inner-content{
+        padding-left: 8%;
+        padding-right: 43%;
+    }
+}
+@media screen and (max-width: $mobile-max){
+  
+    .pdf-inner-content{
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+@media screen and (max-width: $small-mobile-max){
+  
+    .pdf-inner-content{
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}
+

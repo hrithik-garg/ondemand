@@ -1,0 +1,9 @@
+export const generateOtpForRegisteredUserUrl = "login/GenerateOtpForRegisteredUser";
+export const generateOtpForUnRegisteredUserUrl = "login/GenerateOtpForUnRegisteredUser";
+export const registerFPTUserUrl = "register/RegisterFPTUser";
+export const validateFPTUserUrl = "login/ValidateFPTUser";
+export const getUserAccountDetailsUrl = "2.0/Profile/GetAccountDetails";
+export const getActiveCommunities = "CommunityOD/GetPublicActiveCommunitiesOD";
+export const getCommunityById =  "community/GetCommunityById";
+export const getNearByMatchpoints = "2.0/MatchpointOD/GetNearByMatchpointsOD/";
+export const saveRideRequest = "RideRequest/SaveRideRequest";

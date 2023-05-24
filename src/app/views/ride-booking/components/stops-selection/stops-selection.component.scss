@@ -1,0 +1,142 @@
+@import "src/styles.scss";
+
+.booking-select-location-left-part {
+    width: 7%;
+    img {
+        margin-top: 0.3125rem;
+    }
+}
+
+.booking-select-location-right-part {
+    width: 93%;
+}
+
+.available-stops {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 0.0625rem solid $gray-border;
+    padding-bottom: 0.625rem;
+
+    .stop-name-content{
+        display: flex;
+        .selected-text{
+            margin-top: 0.125rem;
+        }
+    }
+    .stops-name {
+        font-size: 1rem;
+        color: $black;
+    }
+}
+
+.available-stops-container {
+    width: 100%;
+}
+
+.select-requirements-container {
+    width: 100%;
+
+    .select-requirements-content {
+        padding-right: 0.8125rem;
+    }
+
+    .special-requirements {
+        height: 5.5rem;
+        background-color: $blue-background;
+        width: 100%;
+        margin-top: 0.75rem;
+        padding: 0.75rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .user-icon-container {
+            margin-left: 0.625rem;
+            align-items: center;
+            padding-top: 0.625rem;
+            .user-icon{
+                font-size: 1rem;
+            }
+        }
+
+        .special-requirements-content {
+            margin-left: 1.875rem;
+        }
+    }
+}
+
+.scroll-on-mps{
+    height: 13.75rem; 
+    padding-right: .625rem;
+    overflow: auto;
+}
+
+.request-div {
+    display: flex;
+    justify-content: space-between;
+}
+
+:host ::ng-deep .checkbox-container {
+    margin-left: 1.6875rem;
+    padding-top: 0.375rem;
+
+    .p-checkbox .p-checkbox-box {
+        border: 0.125rem solid $blue;
+    }
+
+    .p-checkbox .p-checkbox-box.p-highlight {
+        background-color: $blue;
+    }
+}
+@media screen and (max-width: $laptop-max){
+    ::ng-deep{
+        .ride-select-btn .p-button-label {
+            font-size: .875rem;
+        }
+    } 
+}
+
+@media screen and (max-width: $tablet-max){
+    ::ng-deep{
+        .ride-select-btn .p-button-label {
+            font-size: 1rem;
+        }
+    } 
+    .booking-select-location-left-part {
+        width: 6%;
+    }
+    
+    .booking-select-location-right-part {
+        width: 94%;
+    }
+}
+@media screen and (max-width: $small-mobile-max){
+    ::ng-deep{
+        .ride-select-btn .p-button-label {
+            font-size: .8125rem;
+        }
+    } 
+    .booking-select-location-left-part {
+        width: 6%;
+    }
+    
+    .booking-select-location-right-part {
+        width: 94%;
+    }
+}
+
+::ng-deep .gm-style .gm-style-iw-c{
+    margin-left: 5.4375rem;
+    margin-top: 1.25rem;
+    padding: 0;
+    border-radius: 1.5625rem;
+}
+::ng-deep .gm-ui-hover-effect{
+    display: none !important;
+}
+::ng-deep .gm-style .gm-style-iw-d {
+    overflow: auto !important;
+}
+::ng-deep .gm-style .gm-style-iw-tc{
+    display: none;
+}

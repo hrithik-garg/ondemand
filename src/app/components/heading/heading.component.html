@@ -1,0 +1,23 @@
+<ng-container [ngSwitch]="headingType">
+    <ng-container *ngSwitchCase="'h1'">
+        <h1 [class]="cls">{{ text }}</h1>
+    </ng-container>
+    <ng-container *ngSwitchCase="'h2'">
+        <h2 [class]="cls">{{ text }}</h2>
+    </ng-container>
+    <ng-container *ngSwitchCase="'h3'">
+        <h3 [class]="cls">{{ text }}</h3>
+    </ng-container>
+    <ng-container *ngSwitchCase="'h4'">
+        <h4 [class]="cls">{{ text }}</h4>
+    </ng-container>
+    <ng-container *ngSwitchCase="'h5'">
+        <h5 [class]="cls">{{ text }}</h5>
+    </ng-container>
+    <ng-container *ngSwitchCase="'h6'">
+        <h6 [class]="cls">{{ text }}</h6>
+    </ng-container>
+    <ng-container *ngSwitchDefault>
+        <h6 [class]="cls">{{ text }}</h6>
+    </ng-container>
+</ng-container>

@@ -1,0 +1,29 @@
+@import "src/styles.scss";
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    color: $black;
+}
+
+.white-sub-heading {
+    color: $white;
+}
+
+.blue-sub-heading {
+    color: $blue;
+}
+
+.sub-sub-heading {
+    font-weight: 500;
+}
+
+.blue-sub-sub-heading{
+    font-weight: 500;
+    color: $blue;
+}
+
+@media screen and (max-width: $small-mobile-max){
+    h4{
+        font-size: .875rem;
+    }
+}

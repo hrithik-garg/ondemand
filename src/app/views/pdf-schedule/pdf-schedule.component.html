@@ -1,0 +1,33 @@
+<section class="pdf-container" [ngStyle]="{'min-height': isCommunitySelected ? '22.5rem': '26.5rem'}">
+    <div class="pdf-content" [ngStyle]="{'min-height': isCommunitySelected ? '22.5rem': '26.5rem'}">
+        <div class="pdf-inner-content">
+            <div>
+                <app-heading
+                    [text] = "'PDF Schedule'"
+                    [cls] = "'white-sub-heading'"
+                    [headingType]="'h3'">
+                </app-heading>
+            </div>
+            <div class="pdf-dropdowns">
+                <div class="booking-dropdowns"> 
+                    <div class="p-mt-3">
+                        <app-dropdown 
+                            [placeholder] = "'selectTimetablePeriod' | translate">
+                        </app-dropdown>
+                    </div>
+                    <div class="p-mt-3">
+                        <app-dropdown 
+                            [placeholder] = "'selectStops' | translate">
+                        </app-dropdown>
+                    </div>
+                </div>
+            </div>
+            <div >
+                <app-button 
+                    [name] = "'showPdfSchedule' | translate"
+                    [cls] = "'shadow'">
+                </app-button>
+            </div>
+        </div>
+    </div>
+</section>

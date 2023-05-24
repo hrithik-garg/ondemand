@@ -1,0 +1,25 @@
+<div class="p-mt-5 p-mb-4">
+    <app-heading [text]="'Ongoing rides'" [headingType]="'h4'">
+    </app-heading>
+</div>
+<div *ngFor="let rides of ongoingRides" class="ongoing-rides p-grid p-col-12 p-mb-3">
+    <div class="p-md-5 p-sm-5 p-p-3">
+        <app-heading text="{{rides.startingAddress}}" [headingType]="'h4'">
+        </app-heading>
+        <app-description text="{{rides.startTime}}" cls="gray-text" class="loc-time">
+        </app-description>
+    </div>
+    <div class="p-md-2 p-sm-2 "><i class="pi pi-arrow-right p-mt-3"></i></div>
+    <div class="p-md-5 p-sm-5 p-p-3">
+        <app-heading text="{{rides.destinationAddress}}" [headingType]="'h4'">
+        </app-heading>
+        <app-description 
+            text="{{rides.endTime}}" cls="gray-text" class="loc-time">
+        </app-description>
+        <app-button 
+            [name]="'see details'" 
+            [cls]="'blue-text-btn'" 
+            class="see-details-container">
+        </app-button>
+    </div>
+</div>

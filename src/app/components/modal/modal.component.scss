@@ -1,0 +1,39 @@
+@import "src/styles.scss";
+
+.content {
+    padding: 0rem 1.3rem;
+    font-weight: 500;
+    font-size: $font-size-m;
+    line-height: 1.5rem;
+    letter-spacing: .0313rem;
+}
+
+p {
+    font-weight: 500;
+    font-size: 0.938rem;
+}
+
+.btns-container {
+    display: flex;
+    justify-content: end;
+    padding: 1.5rem 1.3rem .75rem;
+}
+
+::ng-deep .p-dialog .p-dialog-content {
+    background: $white;
+    color: $black;
+    padding: 0;
+}
+
+::ng-deep .p-dialog .p-dialog-header .p-dialog-title {
+    font-weight: 600;
+    font-size: 1.125rem;
+    color: $black;
+}
+
+::ng-deep .p-dialog .p-dialog-header {
+    padding: 1.3rem;
+}
+::ng-deep .p-dialog .p-dialog-header .p-dialog-header-icon:focus{
+    box-shadow: none;
+}

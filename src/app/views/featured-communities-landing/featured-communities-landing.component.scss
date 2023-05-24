@@ -1,0 +1,141 @@
+@import "src/styles.scss";
+
+.main-heading {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 5.5rem;
+    padding-bottom: 2.7188rem;
+    align-items: baseline;
+}
+
+.communities-container {
+    padding-left: 5rem;
+    display: block;
+}
+
+.community-content {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    margin-right: 4.75rem;
+
+    img {
+        width: 100%;
+        height: 15.625rem;
+    }
+}
+
+.community-main-container {
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+}
+
+.community-text {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.75rem;
+    border: 0.0625rem solid $light-border-color;
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+}
+
+::placeholder {
+    color: $black;
+    font-size: 1rem;
+}
+
+app-button {
+    float: left;
+}
+
+.community-img {
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+}
+
+.community-name-img-container {
+    box-shadow: $img-box-shadow;
+}
+
+.input-container {
+    width: 88%;
+    position: fixed;
+}
+.community-names-btn-container{
+    padding-top: 3.75rem;
+}
+.community-names-btn-txt{
+    padding-bottom: 1.875rem;
+}
+::ng-deep .custom-header{
+    .p-dialog-title{
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+::ng-deep tbody.p-element.p-datatable-tbody{
+  display: grid;
+  padding-top: 3.125rem;
+}
+@media screen and (max-width: $laptop-max) {
+    .community-content {
+        margin-right: 3.125rem;
+
+        img {
+            height: 13.125rem;
+        }
+    }
+}
+
+@media screen and (max-width: $tablet-max) {
+    .community-text {
+        padding: 0.875rem;
+    }
+
+    .community-content {
+        margin-right: 1.25rem;
+
+        img {
+            height: 10.625rem;
+        }
+    }
+
+    .communities-container {
+        padding-left: 1rem;
+    }
+
+    .main-heading {
+        padding-right: 1rem;
+        padding-bottom: 2.7188rem;
+    }
+}
+
+@media screen and (max-width: $mobile-max) {
+    .community-content {
+        margin-right: 1rem;
+        padding-bottom: 1.25rem;
+
+        img {
+            height: 13.125rem;
+        }
+    }
+
+    .community-main-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main-heading {
+        font-size: 0.875rem;
+    }
+}
+
+@media screen and (max-width: $small-mobile-max) {
+    .community-content {
+        img {
+            height: 16.25rem;
+        }
+    }
+
+}

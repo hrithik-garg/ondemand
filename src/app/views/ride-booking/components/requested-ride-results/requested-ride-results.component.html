@@ -1,0 +1,118 @@
+<div *ngIf="!isOngoingRideSelected">
+    <div class="final-ride-container p-grid p-col-12">
+        <div class="p-md-5 p-p-3">
+            <app-heading text="{{startingStop}}" [headingType]="'h4'">
+            </app-heading>
+            <div class="left-side-content p-mt-3">
+                <div class="requirement-container">
+                    <i class="pi pi-calendar p-mr-1"></i>
+                    <app-heading text="{{date}}" cls="sub-sub-heading" [headingType]="'h5'">
+                    </app-heading>
+                </div>
+                <div class="requirement-container p-mt-3">
+                    <img src="./assets/img/airline_seat_recline_extra(2x_size).png">
+                    <app-heading text="{{seats}}" cls="sub-sub-heading" [headingType]="'h5'">
+                    </app-heading>
+                </div>
+            </div>
+        </div>
+        <div class="p-md-2"><i class="pi pi-arrow-right p-mt-3"></i></div>
+        <div class="p-md-5 p-p-3">
+            <app-heading text="{{destinationStop}}" [headingType]="'h4'">
+            </app-heading>
+            <div class="right-side-content p-mt-3">
+                <div class="requirement-container">
+                    <i class="pi pi-clock p-mr-1"></i>
+                    <app-heading text="{{time}}" cls="sub-sub-heading" [headingType]="'h5'">
+                    </app-heading>
+                </div>
+                <div  class="requirement-container p-mt-3">
+                    <img src="./assets/img/magic_button(2x_size).png">
+                    <app-heading text="{{isWalkerOrWheelChair}}" cls="sub-sub-heading" [headingType]="'h5'">
+                    </app-heading>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- THIS CODE HAVE DEPENDENCY of API -->
+    <!-- <div class="p-mt-4">
+        <app-heading [text]="'Available ride'" [headingType]="'h4'">
+        </app-heading>
+        <div class="cash-to-driver p-mt-4 p-mb-1">
+            <div style="display: flex;">
+                <i class="pi pi-exclamation-circle p-mr-1"></i>
+                <app-description text="Kindly pay in cash to the driver." cls="gray-small-text">
+                </app-description>
+            </div>
+            <div>
+                <app-heading text="{{price}}" cls="blue-sub-sub-heading" [headingType]="'h5'">
+                </app-heading>
+            </div>
+        </div>
+    </div> -->
+    <!-- <div class="final-ride-display-container">
+        <div class="final-ride-display-content">
+            <img src="./assets/img/start-to-end-img2.png" class="start-to-destination-img ml-2" alt="start to dest">
+            <div>
+                <div class="p-mt-3">
+                    <app-description text="Starting location" cls="gray-small-text">
+                    </app-description>
+                    <div class="locations">
+                        <app-heading text="{{startingStop}}" [headingType]="'h4'">
+                        </app-heading>
+                        <div class="time p-mr-3">
+                            <app-description text="ETA" cls="gray-sub-text">
+                            </app-description>
+                            <app-heading text="{{startingTime}}" cls="sub-sub-heading" [headingType]="'h5'">
+                            </app-heading>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-my-4">
+                    <app-description text="({{requiredStops}})" cls="gray-text">
+                    </app-description>
+                </div>
+                <div class="p-mt-2">
+                    <app-description text="Destination location" cls="gray-small-text">
+                    </app-description>
+                    <div class="locations">
+                        <app-heading text="{{destinationStop}}" [headingType]="'h4'">
+                        </app-heading>
+                        <div class="time p-mr-3">
+                            <app-description text="ETA" cls="gray-sub-text">
+                            </app-description>
+                            <app-heading text="{{destinationTime}}" cls="sub-sub-heading" [headingType]="'h5'">
+                            </app-heading>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accept-deny-btn p-grid p-col-12">
+            <div class="accept-btn-container">
+                <app-button [name]="'Accept'" [cls]="'accept-btn'">
+                </app-button>
+            </div>
+            <div class="deny-btn-container">
+                <app-button [name]="'Deny'" [cls]="'deny-btn'">
+                </app-button>
+            </div>
+        </div>
+    </div> -->
+    <!-- <div class="last-container p-mt-4 p-mb-2">
+        <app-heading text="Didn’t see what you were looking for?" cls="sub-sub-heading" [headingType]="'h5'">
+        </app-heading>
+        <app-button [name]="'See ongoing rides'" (onClick)="showOngoingRides()" [cls]="'blue-text-btn'" class="p-ml-1">
+        </app-button>
+    </div> -->
+</div>
+<div *ngIf="isOngoingRideSelected">
+    <div class="show-available-rides-container p-mt-4">
+        <div class="p-mr-1">
+            <i class="pi pi-angle-left"></i>
+        </div>
+        <app-button [name]="'Available ride'" [cls]="'text-btn'" (onClick)="showAvailableRides()">
+        </app-button>
+    </div>
+    <app-ongoing-rides></app-ongoing-rides>
+</div>

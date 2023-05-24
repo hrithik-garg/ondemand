@@ -1,0 +1,97 @@
+@import "src/styles.scss";
+
+.common-btn {
+    margin-top: $field-margin-top;
+    width: 100%;
+    height: 3rem;
+    background: $blue;
+    font-weight: 600;
+    border-radius: 6.25rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    font-size: 1rem;
+    color: $white;
+    border-style: none;
+}
+
+.shadow {
+    box-shadow: $btn-box-shadow !important;
+}
+.common-community-btn{
+    font-weight: 500;
+    min-width: 9.375rem;
+    border: .0625rem solid $blue;
+}
+
+.community-btn {
+    @extend .common-community-btn;
+    margin-top: .625rem;
+    color: $blue;
+    background: $white;
+}
+
+.common-btn-highlight {
+    @extend .common-community-btn;
+    margin-top: 0;
+    background: $blue;
+    color: $white;
+}
+.common-text-btn{
+    background: none !important;
+    height: fit-content;
+    margin-top: 0;
+    border: none;
+    padding: 0;
+    font-weight: 500;
+}
+.text-btn {
+    @extend .common-text-btn;
+    color: $black;
+}
+
+.blue-text-btn {
+    @extend .common-text-btn;
+    color: $blue !important;
+    border: none;
+}
+
+.gray-text-btn {
+    @extend .common-text-btn;
+    color: $gray;
+    border: none;
+}
+.common-white-bg-btn {
+    @extend .common-btn;
+    margin-top: 0;
+    background-color: $white;
+    border-radius: 6.25rem;
+}
+.accept-btn {
+    @extend .common-white-bg-btn;
+    background: $green;
+    border-style: none;
+}
+
+.deny-btn {
+    @extend .common-white-bg-btn;
+    color: $red;
+    border: 0.0625rem solid $red;
+}
+
+.schedule-btn {
+    @extend .common-white-bg-btn;
+    color: $blue;
+    border: 0.0625rem solid $blue;
+}
+button:disabled{
+    opacity: 0.8;
+}
+@media screen and (max-width: $small-mobile-max) {
+    button {
+        font-size: .875rem;
+    }
+
+    .dark-blue-btn {
+        background-color: $dark-blue;
+    }
+}

@@ -1,0 +1,118 @@
+@import "src/styles.scss";
+
+.header-cls {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-cls {
+    padding: .75rem 0rem;
+    height: 4.5rem;
+    justify-content: flex-start;
+}
+
+.brand-logo {
+    width: 21rem;
+    height: 3rem;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.community-name-text {
+    margin-top: .875rem;
+}
+
+.home-btn-container {
+    display: flex;
+    padding-left: 5.5rem;
+    cursor: pointer;
+
+    .pi {
+        font-size: .75rem;
+        margin: .3125rem .3125rem 0rem 0rem;
+        color: $blue;
+    }
+}
+
+@media screen and (max-width: $tablet-max) {
+    .community-name-text {
+        font-size: 1rem;
+        margin-top: .7rem;
+    }
+
+    .home-btn-container {
+        padding-left: 3rem;
+        font-size: .875rem;
+
+        .pi {
+            font-size: .6rem;
+            margin-top: 0.4rem;
+        }
+    }
+
+    .header-cls {
+        width: 80%;
+    }
+
+    .nav-cls {
+        height: 3.6875rem;
+    }
+
+    .brand-logo {
+        width: 16.9375rem;
+        height: 2.375rem;
+    }
+}
+
+@media screen and (max-width: $mobile-max) {
+    .home-btn {
+        display: none;
+    }
+
+    .header-cls {
+        width: 90%;
+    }
+
+    .home-btn-container {
+        padding-left: 1.25rem;
+        padding-left: 1.75rem;
+
+        .pi {
+            margin-top: 0;
+            font-size: 0.6rem;
+        }
+    }
+}
+
+@media screen and (max-width: $small-mobile-max) {
+    .community-name-text {
+        margin-top: 0.49rem;
+        font-size: .875rem;
+        padding-right: .625rem;
+    }
+
+    .header-cls {
+        width: 85%;
+    }
+
+    .nav-cls {
+        height: 3.6875rem;
+    }
+
+    .brand-logo {
+        width: 12.1875rem;
+        height: 1.6875rem;
+    }
+
+    .home-btn-container {
+        padding-left: .9375rem;
+    }
+}

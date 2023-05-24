@@ -1,0 +1,103 @@
+{
+    "mainBannerHeading": {
+        "first": "Offer better ride sharing to your community,",
+        "second": "with our",
+        "third": "on-demand service."
+    },
+
+    "mainBannerDescription": "Share your email, we’ll get back to you soon!",
+    "etrYrMail": "Enter your email",
+    "sbmtRequest": "Submit Request",
+
+    "commMainBannerHeading": {
+        "first": "Schedule a ride,",
+        "second": "give us a",
+        "third":  "call",
+        "fourth": "or simply",
+        "fifth":  "request",
+        "sixth": "one below."
+    },
+    "brandTxt": {
+        "first": "Book or Schedule rides on the go.",
+        "second": "Check out Bürgerbus On Demand on appstore."
+    },
+
+    "featuredComm": "Featured Communities",
+    "showAll": "Show All",
+
+    "commMap": "Community Map",
+    "requestARide": "Request a Ride",
+    "cancel": "Cancel",
+
+    "verification": "Verification",
+    "enterPhonenoDescription": "Please verify your number that will be used for communication purpose.",
+    "mobileNo": "Mobile Number",
+    "enterOTP": "Enter OTP",
+    "verifyOTP": "Verify OTP",
+    "sendOTP": "Send OTP",
+    "otp": "OTP",
+    "personalDetails": "Personal details",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+
+    "requestRide": "Request ride",
+    "yourNumber": "Your Number ",
+    "isVerified": " is verified",
+    "edit": "Edit",
+    "logout": "Logout",
+
+    "newRideRequest": "New ride request",
+    "ongoingRides": "Ongoing rides",
+    "stopsSelection": "Stops selection",
+    "availableStops": "Available Stops",
+    "selectStart": "Select start",
+    "seeDetails": "See details",
+    "start": "Start",
+    "destination": "Destination",
+    "selectDestination": "Select destination",
+    "signOutPara": "Sign out from",
+    "changeCommunityModalPara": {
+        "first": "Your community will change to",
+        "second": "You’ll need to restart the process of ride request."
+    },
+    "innovationMainHeading": "A Quick Tour of Our Innovative Solution",
+    "innovationSubPara": "Let us take you on a dynamic journey of discovery and show you how our solution can revolutionize the way you work.",
+    "submitRequestModalPara": "Your request has been shared with us successfully and we’ll get back to you soon!",
+    "submitRequestHeading": "Request submitted successfully",
+    "communityNotFound": "Community Not Found!",
+    "okay": "Okay",
+    "contactPara": {
+        "first": "Like what you see?",
+        "second": "Share your email, we’ll get back to you soon!"
+    },
+    "callTxt": "Call now",
+    "searchCommunity": "Search community",
+    "emailPlaceholder": "Enter your email to continue",
+    "communitiesHeading": "Communities ",
+    "areYouSure": "Are you sure?",
+    "confirm": "Confirm",
+    "rideCancelModalHeading": "On ride cancellation you’ll need to restart the process of ride request.",
+    "cancelRideRequest": "Cancel ride request",
+    "deny": "Deny",
+    "enterEmail": "Enter your email",
+    "home": "Home",
+    "scheduleHeading": "See the latest on-demand schedule of your community.",
+    "showSchedule": "Show Schedule",
+    "privacy&Policy": "Privacy Policy",
+    "terms&Conditions": "Terms & Conditions",
+    "contactUs": "Contact Us",
+    "help": "Help",
+    "footerBelowHeadingPara": {
+        "first": "Powered by",
+        "second": "Match Rider",
+        "third": "All rights reserved."
+    },
+    "goBack": "Go Back",
+    "selectTimetablePeriod": "Select Timetable Period",
+    "selectStops": "Select Stops",
+    "showPdfSchedule": "Show PDF Schedule",
+    "startingStops": "Starting Stops",
+    "destinationStops": "Destination Stops",
+    "startingStop1": "(starting stop)",
+    "destinationStop1": "(destination stop)"
+}

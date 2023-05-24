@@ -1,0 +1,11 @@
+@import "src/styles.scss";
+
+.mat-input{
+    margin-top: $field-margin-top;
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-subscript-wrapper{
+    padding: 0 !important;
+}
+::ng-deep .mat-form-field-subscript-wrapper{
+    margin-top: 1.4375rem;
+}

@@ -1,0 +1,24 @@
+@import "src/styles.scss";
+
+.spinner-overlay {
+    height:100vh;
+    width:100%;
+    background-color: $dark-gray;
+    z-index:    10;
+    top:        0; 
+    left:       0; 
+    position:   fixed;
+
+    > .spinner-center{
+        position: absolute;
+        top: 72%;
+        left: 50%;
+        -moz-transform: translateX(-50%) translateY(-50%);
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+
+        img{
+            width: 12.5rem;
+        }
+    }
+}

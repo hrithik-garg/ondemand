@@ -1,0 +1,205 @@
+@import "src/styles.scss";
+
+
+@media screen and (max-width: $laptop-max){
+    .banner-background-effect{
+        padding-left: 5%;
+    }
+    .main-banner-background-effect{
+        padding-left: 5%;
+    }
+    .community-content{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .map-content{
+        padding-left: 5%;
+    }
+    .pdf-inner-content{
+        padding-left: 5%;
+    }
+   
+    .branding-left-part{
+        padding-left: 5%;
+    }
+    .branding-logo p{
+        font-size: 3.5rem;
+    }
+}
+@media screen and (max-width: $tablet-max){
+    .banner-heading, .main-banner-heading{
+        p{
+            font-size: 2rem;
+        }
+    }
+    .banner-phn-no{
+        font-size: 1.125rem;
+    }
+    .main-banner-description{
+        font-size: .875rem;
+    }
+    .map-heading,.booking-heading{
+        p{
+            font-size: 1.125rem;
+        }
+    }
+    .booking-description{
+        font-size: .9375rem;
+    }    
+    .branding-container{
+        min-height: 11.875rem;
+    }
+    .branding-content{
+        margin-top: 2.5rem;
+    }
+    .branding-left-part{
+        padding-left: 5%;
+        width: 100% !important;
+    }
+    .branding-right-part{
+        width: 0rem !important;
+        display: none;
+    }
+    .branding-text{
+        font-size: 1.5rem;
+    }
+    .branding-app-store-imgs{
+        img{
+            width: 8.8125rem;
+            height: 3rem;
+        }
+    }
+}
+@media screen and (max-width: $mobile-max){
+   
+    .banner-background-effect{
+        background: $banner-linear-gradient;
+        padding: 8%;
+    }
+    .main-banner-content{
+        width: 100%;
+        text-align: center;
+    }
+    .main-banner-fields{
+        max-width: 100%;
+    }
+    .banner-content{
+        width: 100%;
+        text-align: center;
+    }
+    .banner-btns{
+        button{
+            font-size: .875rem;
+            min-width: 8.125rem;
+        }
+    }
+    .community-count{
+        text-align: center;
+        margin-top: 1.25rem;
+    }
+    .community-btns{
+        flex-direction: column;
+        align-items: center;
+        margin-top: 1.75rem;
+        button{
+            margin-bottom: 1.25rem;
+        }
+    }
+    .community-show-all-btn{
+        margin-top: 1rem;
+        margin-bottom: 2.5rem;
+    }
+    .map-content{
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+    .booking-right-part{
+        margin-top: 1.875rem;
+        padding-left: 0rem !important;
+        padding-right: 0rem !important;
+    }
+    .booking-fields{
+        max-width: 100%;
+    }
+    .booking-submit-btn button{
+        font-size: .9375rem;
+        margin-bottom: 1.875rem;
+    }
+    .pdf-inner-content{
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+    .pdf-dropdowns{
+        max-width: 100%;
+    }
+    .pdf-btn{
+        max-width: 100%;
+        button{
+            font-size: .9375rem;
+        }
+    }
+    .pdf-heading p{
+        font-size: 1.125rem;
+    }
+    .branding-content{
+        margin-top: 2rem;
+    }
+    .branding-left-part{
+        padding-left: 8%;
+        padding-right: 8%;
+        text-align: center;
+    }
+    .branding-text{
+        p{
+            font-size: 1.25rem;
+            span{
+                display: block;
+                margin-top: 1.25rem;
+            }
+        }
+    }
+    .branding-app-store-imgs{
+        padding-bottom: 1.875rem;
+    }
+}
+
+ 
+@media screen and (max-width: $small-mobile-max){
+
+    .banner-background-effect{
+        padding: 12% 8%;
+    }
+    .main-banner-background-effect{
+        padding: 12% 8%;
+    }
+    .banner-heading, .main-banner-heading{
+        p{
+            font-size: 1.375rem;
+        }
+    }
+    .banner-btns{
+        button{
+            font-size: .75rem;
+            min-width: 6.25rem;
+            height: 2.5rem;
+            padding-left: .9375rem;
+            padding-right: .9375rem;
+        }
+    }
+    .branding-text p{
+        font-size: 1.1875rem;
+    }
+    .branding-app-store-imgs{
+        padding-bottom: 1.875rem;
+        img{
+            width: 6.25rem;
+            height: 2.5rem;
+        }
+    }
+    .google-map{
+        height: 22.5rem !important;
+    }
+    .community-heading p{
+        font-size: 1.125rem;
+    }
+}

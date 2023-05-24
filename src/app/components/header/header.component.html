@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light nav-cls">
+ <div *ngIf="communitySelected" class="home-btn-container">
+  <i class="pi pi-chevron-left"></i>
+  <app-heading text="{{'home' | translate}}" [routerLink]="['/']" cls="blue-sub-sub-heading" [headingType]="'h4'" class="home-btn">
+  </app-heading>
+ </div>
+  <div class="navbar-brand header-cls">
+    <div class="brand-logo">
+      <img [routerLink]="['/']" src="./assets/img/fpt_ondemand_logo.png">
+    </div>
+    <div *ngIf="communitySelected" class="p-ml-3 community-name-text">
+      <app-heading text='{{communityName}}' cls="blue-sub-sub-heading" [headingType]="'h5'">
+      </app-heading>
+    </div>
+  </div>
+
+  <!-- This code is used for language translation and will be use later -->
+  <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button> -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link">
+            <span class="form-inline">
+              <select 
+                  class="form-control" 
+                  #selectedLang 
+                  (change)="switchLang(selectedLang.value)">
+                <option *ngFor="let language of translate.getLangs()" 
+                  [value]="language"
+                  [selected]="language === translate.currentLang">
+                  {{ language }}
+                </option>
+              </select>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>

@@ -1,0 +1,137 @@
+@import "src/styles.scss";
+
+.footer-container{
+    min-height: 12.5rem;
+    background: #ECECEC;
+}
+.footer-content{
+    margin-top: 4.5625rem;
+}
+.footer-left-part{
+    padding: 0rem !important;
+    padding-left: 8% !important;
+}
+.footer-logo img{
+    width: 21rem;
+    height: 4rem;
+}
+.footer-branding{
+    margin-top: 3.375rem;
+    margin-bottom: 1rem;
+    font-size: .625rem;
+    text-align: center;
+    span{
+        color: $green;
+    }
+}
+
+.footer-right-part{
+    padding-left: 5%;
+}
+.footer-elements{
+    margin-top: 1.25rem;
+    display: inline-flex;
+    list-style: none;
+    text-align: center;
+    width: 100%;
+    li{
+        font-size: 1rem;
+        width: 100%;
+        color: $black;
+    }
+}
+.footer-button {
+    margin-top: .8275rem;
+    button{
+        min-width: 8.125rem;
+        height: 2.375rem;
+        font-size: 1rem;
+        border: .0625rem solid;
+        border-radius: 6.25rem;
+        color: $black;
+    }
+}
+
+@media screen and (max-width: $laptop-max){
+    .footer-content{
+        margin-top: 2rem;
+    }
+    .footer-left-part{
+        width: 50% !important;
+        padding-left: 5% !important;
+    }
+    .footer-right-part{
+        width: 50% !important;
+    }
+    .footer-right-part{
+        .left-part, .right-part{
+            width: 50%;
+        }
+    }
+    .footer-elements{
+        flex-direction: column;
+        text-align: left;
+        margin-top: 0rem;
+        line-height: 2.2rem;
+    }
+    .footer-button{
+        margin-top: .3125rem;
+    }
+}
+
+@media screen and (max-width: $mobile-max){
+    .footer-content{
+        display: flex;
+        flex-direction: column-reverse;
+        margin-top: 0;
+    }
+    .footer-left-part{
+        margin-top: 1.875rem;
+        margin-bottom: 1.875rem;
+        width: 100% !important;
+        padding-left: 8% !important;
+        padding-right: 8% !important;
+        text-align: center;
+    }
+    .footer-right-part{
+        width: 100% !important;
+        padding-left: 8%;
+        padding-right: 8%;
+        margin-top: 2.5rem;
+    }
+    .footer-button{
+        text-align: center;
+    }
+    .footer-branding{
+        margin-top: .625rem;
+        margin-bottom: 1.25rem;
+    }
+    .footer-logo img{
+        width: 16.9375rem;
+        height: 2.375rem;
+    }
+}
+@media screen and (max-width: $small-mobile-max){
+    .footer-elements{
+        li{
+            font-size: .875rem;
+        }
+    }
+    .footer-button{
+        button{
+            font-size: .875rem;
+            min-width: 7.1875rem;
+            height: 2.1875rem;
+            i{
+                font-size: .875rem;
+            }
+        }
+    }
+    .footer-branding{
+        font-size: .75rem;
+    }
+    .footer-logo img{
+        width: 12.1875rem;
+        height: 1.6875rem;
+    }
+}

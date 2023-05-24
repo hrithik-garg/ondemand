@@ -1,0 +1,107 @@
+@import "src/styles.scss";
+
+.map-container{
+    position: relative;
+}
+.map-content{
+    padding-bottom: 2rem;
+    min-height: 40rem;
+    margin-top: 2.75rem;
+    padding-left: 5%;
+}
+.map-heading{
+    display: flex;
+    .gray-hd{
+        margin-top: .25rem;
+        margin-left: .9375rem;
+    }
+}
+.map-left-part{
+    padding-bottom: 3rem !important;
+}
+.google-map{
+    margin-top: 1.25rem;
+    height: auto;
+    width: 100%;
+    border-radius: .25rem;
+}
+.booking-right-part{
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+}
+.booking-fields{
+    margin-top: 1.75rem;
+    max-width: 100%;
+}    
+.booking-description{
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+.booking-sub-heading{
+    
+    display: flex;
+    justify-content: space-between;
+    p{
+        font-size: 1rem;
+        font-weight: 600;
+    }
+    button{
+        background: $white;
+        color: $blue;
+        font-size: 0.875rem;
+        border: none;
+    }
+}
+.booking-submit-btn{
+    button{
+        width: 100%;
+        height: 3rem;
+        background: $blue;
+        font-weight: 600;
+        border-radius: 6.25rem;
+        font-size: 1rem;
+        color: $white;
+    }
+}
+.change-phn-no-heading{
+    display: flex;
+    justify-content: space-between;
+    span{
+        color: $blue;
+    }
+}
+.flex-cls{
+    display: flex; 
+    justify-content: space-between;
+}
+@media screen and (max-width: $tablet-max){
+    .map-content{
+        padding-right: 5%;
+    }
+    .map-left-part{
+        width: 100%;
+    }
+    .booking-right-part{
+        margin-top: 2.5rem;
+        margin-bottom: 2.5rem;
+        width: 100% !important;
+    }
+}
+@media screen and (max-width: $mobile-max){
+    .map-content{
+        padding-left: 5%;
+        padding-right: 5% !important;
+    }
+    .booking-right-part{
+        padding-left: 2% !important;
+        padding-right: 2% !important;
+    }
+    .map-content{
+        padding-right: 8%;
+    }
+}
+@media screen and (max-width: $small-mobile-max){
+    .google-map{
+        height: 18.4375rem;
+    }
+}

@@ -1,0 +1,12 @@
+<p-dropdown [options]="dataList" [(ngModel)]="value" optionLabel="Name" [filter]="true" filterBy="Name" [showClear]="true" [placeholder] = "placeholder">
+    <ng-template pTemplate="selectedItem">
+        <div *ngIf="value">            
+            <div style="text-overflow: ellipsis; overflow: hidden;">{{value}}</div>
+        </div>
+    </ng-template>
+    <ng-template let-community pTemplate="item">   
+        <div style="font-size: 12px;">
+            <div>{{ value }}</div>
+        </div>                      
+    </ng-template>
+</p-dropdown>

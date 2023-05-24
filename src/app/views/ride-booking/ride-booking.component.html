@@ -1,0 +1,56 @@
+<section class="map-container">
+    <div class="map-content p-grid p-col-12">
+        <div class="map-left-part p-col-12 p-md-7 p-sm-12 p-p-0">
+            <div class="map-heading">
+                <app-heading [text] = "'commMap' | translate"
+                [headingType]="'h3'"> </app-heading>
+                <div class="gray-hd">
+                    <app-description
+                        text = "{{selectedCommunity}}"
+                        cls = "gray-text">
+                    </app-description>
+                </div>
+            </div>
+            <app-map></app-map>
+        </div>
+        <div class="booking-right-part p-col-12 p-md-5 p-sm-12 p-py-0" >
+            <div class="flex-cls">
+                <app-heading 
+                    [text] = "'requestARide' | translate"
+                    [headingType]="'h3'">
+                </app-heading>
+                <div *ngIf="isProcessStarted">
+                    <app-button 
+                        [name] = "'cancel' | translate"
+                        (onClick) = onCancelRide();
+                        [cls] = "'text-btn'">
+                    </app-button>
+                </div>
+            </div>
+            <div *ngIf="isUserVerified">
+                <div class="p-mt-3 change-phn-no-heading">
+                    <p>{{firstName + " " + lastName + " " }}<span>{{phoneNumber}}</span></p>
+                    <app-button 
+                        [name] = "'logout' | translate"
+                        (onClick) = openCommunitiesModal();
+                        [cls] = "'blue-text-btn'">
+                    </app-button>
+                </div>
+            </div>
+            <ng-container *ngIf="!isUserVerified; else bookingFlow">
+                <app-verify-user></app-verify-user>
+            </ng-container>
+            <ng-template #bookingFlow>
+                <app-stops-selection></app-stops-selection>
+            </ng-template>
+        </div>
+    </div>
+</section>
+
+<!-- Templates For Modal -->
+<ng-template #signOutTemplate>
+    <p>
+        {{'signOutPara' | translate}} {{ firstName }} {{ lastName }} {{ phoneNumber }}
+    </p>
+</ng-template>
+<!-- /templates for modal -->

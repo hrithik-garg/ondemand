@@ -1,0 +1,13 @@
+<div class="main-container">
+    <p class="main-heading">{{'innovationMainHeading' | translate}}</p>
+    <div class="sub-heading">
+        <app-heading
+            [text]="'innovationSubPara' | translate"
+            [cls]="'sub-sub-heading'" 
+            [headingType]="'h3'">
+        </app-heading>
+    </div>
+    <div class="video-container">
+        <app-video-player [videoId]="youTubeVideoId"  class="youtube-video"></app-video-player>
+    </div>
+</div>

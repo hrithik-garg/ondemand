@@ -1,0 +1,47 @@
+<div class="communities-container">
+    <div class="main-heading">
+        <app-heading [text]='"featuredComm" | translate' [headingType]="'h2'">
+        </app-heading>
+        <app-button [name]='"showAll" | translate' (onClick)=showAllCommunityModal(); [cls]="'blue-text-btn'">
+        </app-button>
+    </div>
+    <div class="community-main-container" >
+        <div *ngFor="let community of communitiesData| slice:0: visibleCommunitiesOnScreen;" class="community-content">
+            <div class="community-name-img-container" (click)="onCommunityClick(community)">
+                <div>
+                    <img src="./assets/img/community-img.png" alt="" class="community-img">
+                </div>
+                <div class="community-text">
+                    <p>{{community?.CommunityName}}</p>
+                    <i class=" pi pi-angle-right p-pt-1"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #showAllCommunityTemplate>
+    <div class="input-container">
+        <app-input 
+            [type]="'text'" 
+            placeholder='{{"searchCommunity" | translate}}'
+            [showIcon]="true" 
+            [iconClass]="'pi pi-search'"
+            [control]="searchInputForm.controls['searchInput']"
+            [styleCls]="'input-class'"
+            (onKeyPress)="filterData($event)">
+        </app-input>
+    </div>
+    <div class="community-names-btn-container">
+        <div class="community-names-btn-txt" *ngFor="let community of filteredCommunityData; trackBy: trackByCommunityId">
+            <app-button name = "{{community?.CommunityName}}"
+            (onClick) = "onCommunityClick(community, true)"
+            [cls] = "'blue-text-btn'">
+            </app-button><br>
+        </div>
+    </div>
+    <div class="community-names-btn">
+        <app-heading *ngIf="filteredCommunityData.length === 0" [text]='"communityNotFound" | translate' [headingType]="'h4'">
+        </app-heading>
+    </div>
+</ng-template>

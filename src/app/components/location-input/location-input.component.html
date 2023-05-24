@@ -1,0 +1,8 @@
+<mat-form-field appearance="outline">
+    <mat-label>{{label}}</mat-label>
+    <input ngx-google-places-autocomplete  (onAddressChange)="getAddress($event)" matInput [placeholder]="label" [formControl] = "control" 
+    (focusout)="showEditBtn()" (focusin)="notShowEditBtn()"
+    >
+    <mat-icon *ngIf="isEditable" matSuffix (click)="editLocation()">Edit</mat-icon>
+    <mat-error>{{control | validationError: label}}</mat-error>
+</mat-form-field>

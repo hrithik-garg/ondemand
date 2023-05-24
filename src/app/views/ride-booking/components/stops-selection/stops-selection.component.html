@@ -1,0 +1,203 @@
+
+<ng-container *ngIf="!isStopsAreSelected; else rideRequestResults" class="booking-fields">
+    <div *ngIf="!isStartingStopsAreSelected" class="ride-select-btn p-mt-4">
+        <p-selectButton [options]="viewOptions" [(ngModel)]="selectedView" optionLabel="name"
+            optionValue="code"></p-selectButton>
+    </div>
+    <div *ngIf="selectedView === '1'">
+        <div class="p-mt-4">
+            <app-heading [text]="'stopsSelection' | translate" [headingType]="'h4'">
+            </app-heading>
+        </div>
+        <div class="p-grid p-col-12 p-mt-4">
+            <div class="booking-select-location-left-part p-col-12">
+                <img src="./assets/img/start-to-destination-img.png" alt="start to dest">
+            </div>
+            <div class="booking-select-location-right-part p-col-12">
+                <app-location-input [placeholder]="'start' | translate" [label]="'start' | translate"
+                    (onAddressSelected)="getAddressForStart($event, 'Start')"
+                    [control]="requirementForm.controls['start']" 
+                    (onEditLocation)="onEditLocation('start')">
+                </app-location-input>
+                <div class="p-mt-4">
+                    <app-location-input [placeholder]="'destination' | translate"
+                        [label]="'destination' | translate"
+                        (onAddressSelected)="getAddressForDestination($event, 'Dest')"
+                        [control]="requirementForm.controls['destination']"
+                        (onEditLocation)="onEditLocation('dest')">
+                    </app-location-input>
+                </div>
+            </div>
+            <div class="available-stops-container p-mt-4"
+                *ngIf="(isStartingStopsAreSelected || isDestinationStopsAreSelected) && !isRequirementsSelected">
+                <app-heading [text]="'startingStops' | translate" [headingType]="'h4'"
+                    *ngIf="selectedAddress === 'Start'">
+                </app-heading>
+                <app-heading [text]="'destinationStops' | translate" [headingType]="'h4'"
+                    *ngIf="selectedAddress === 'Dest'">
+                </app-heading>
+                <div class="available-stops-content "
+                    [ngClass]="{'scroll-on-mps': nearByMatchpoints && nearByMatchpoints.length > 3}">
+                    <div class="available-stops p-mt-3" *ngFor="let stop of nearByMatchpoints">
+                        <div>
+                            <div class="stop-name-content">
+                                <p class="stop-name p-mr-1">{{stop.AddressLine}}</p>
+                                <div class="selected-text">
+                                    <app-heading
+                                        *ngIf="(stop === selectedStop && selectedAddress === 'Start') || (selectedAddress === 'Dest'  && storedStartingLocation?.LocationId === stop.LocationId)"
+                                        [text]="('startingStop1' | translate)" cls="blue-sub-sub-heading"
+                                        [headingType]="'h5'">
+                                    </app-heading>
+                                    <app-heading
+                                        *ngIf="(stop === selectedStop && selectedAddress === 'Dest') || (selectedAddress === 'Start' && storedDestLocation?.LocationId === stop.LocationId)"
+                                        [text]="('destinationStop1' | translate)" cls="blue-sub-sub-heading"
+                                        [headingType]="'h5'">
+                                    </app-heading>
+                                </div>
+                            </div>
+                            <app-description text="{{stop.DistanceMeters.toFixed(0)}}m away" cls="gray-sub-text">
+                            </app-description>
+                        </div>
+                        <div>
+                            <app-radio-button class="p-mt-2" 
+                                (onClick) = "createPolylineOnToggle(stop)"
+                                [selectedValue]="selectedStop"
+                                [isDisabled]="selectedAddress === 'Start' ? storedDestLocation?.LocationId === stop.LocationId : storedStartingLocation?.LocationId === stop.LocationId"
+                                [value]="stop">
+                            </app-radio-button>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="nearByMatchpoints.length === 0 && isMatchPointsAvailable">
+                    <p>No stops are available</p>
+                </div>
+            </div>
+            <div class="select-requirements-container" *ngIf="isRequirementsSelected">
+                <div class="p-mt-4">
+                    <app-heading [text]="'Date & Time'" [headingType]="'h4'">
+                    </app-heading>
+                </div>
+                <div class="select-requirements-content">
+                    <app-p-calendar label="Date" [minDate]="defaultDate" inputId="dateformat"
+                        [control]="requirementForm.controls['date']" cls="field-gap w-100">
+                    </app-p-calendar>
+                    <app-p-calendar label="Time" inputId="timeOnly" [timeOnly]="true"
+                        [control]="requirementForm.controls['time']" cls="field-gap w-100">
+                    </app-p-calendar>
+                    <div>
+                        <app-mat-input type="number" [label]="'Seats' | translate" [placeholder]="'Seats' | translate"
+                            [control]="requirementForm.controls['seats']"></app-mat-input>
+                    </div>
+                    <div class="p-mt-4 p-mb-3">
+                        <app-heading [text]="'Special requirements'" [headingType]="'h4'">
+                        </app-heading>
+                    </div>
+                    <div class="requirements">
+                        <div class="p-grid p-col-12 special-requirements ">
+                            <div class="user-icon-container">
+                                <i class="pi pi-user user-icon"></i>
+                            </div>
+                            <div class="p-ml-3">
+                                <app-heading text="Wheelchair" cls="sub-sub-heading" [headingType]="'h5'">
+                                </app-heading>
+                                <app-description text="Select this option if you require a wheelchair while travelling."
+                                    cls="gray-small-text">
+                                </app-description>
+                            </div>
+                            <div class="checkbox-container">
+                                <app-radio-button class="p-mt-2"
+                                    value = "Wheelchair"
+                                    inputId="Wheelchair" 
+                                    (onClick)="changeRequirement($event)"
+                                    [selectedValue]="isWalkerOrWheelChair">
+                                </app-radio-button>
+                            </div>
+                        </div>
+                        <div class="p-col-12 special-requirements ">
+                            <div class="user-icon-container">
+                                <i class="pi pi-user user-icon"></i>
+                            </div>
+                            <div >
+                                <app-heading text="Walker" cls="sub-sub-heading" [headingType]="'h5'">
+                                </app-heading>
+                                <app-description text="Select this option if you require a Walker while travelling."
+                                    cls="gray-small-text">
+                                </app-description>
+                            </div>
+                            <div class="checkbox-container">
+                                <app-radio-button class="p-mt-2" 
+                                    (onClick)="changeRequirement($event)"
+                                    value = "Walker" 
+                                    inputId="Walker"
+                                    [selectedValue]="isWalkerOrWheelChair">
+                                </app-radio-button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-button *ngIf="!isStartingStopsAreSelected && selectedView === '1'" [name]="'Select Start'">
+    </app-button>
+    <app-button *ngIf="!isDestinationStopsAreSelected && isStartingStopsAreSelected" [name]="'Select Destination'">
+    </app-button>
+    <app-button
+        [disabled]="!selectedStartingStop || !selectedDestinationStop || requirementForm.controls['start'].value === '' || requirementForm.controls['destination'].value === ''"
+        *ngIf="(isDestinationStopsAreSelected && isStartingStopsAreSelected) && !isRequirementsSelected"
+        [name]="'Select Requirements'" (onClick)="onSelectDestination($event)">
+    </app-button>
+    <app-button *ngIf="isRequirementsSelected"
+        [disabled]="!isDestinationStopsAreSelected || !isStartingStopsAreSelected || requirementForm.controls['start'].value === '' "
+        [name]="'Find Rides'" (onClick)="saveRideRequest()">
+    </app-button>
+</ng-container>
+<div *ngIf="selectedView === '2'">
+    <app-ongoing-rides></app-ongoing-rides>
+</div>
+<ng-template #rideRequestResults>
+    <div class="request-div p-mt-4 p-mb-3">
+        <app-heading [text]="'Requested ride'" [headingType]="'h4'">
+        </app-heading>
+        <app-button [name]="'Edit'"
+        (onClick)="editRide()"
+        [cls]="'blue-text-btn'">
+    </app-button>
+    </div>
+   
+    <app-requested-ride-results
+        [startingStop] = "selectedStartingStop.AddressLine"
+        [destinationStop] = "selectedDestinationStop.AddressLine"
+        [date] = "requirementForm.controls['date'].value"
+        [time] = "requirementForm.controls['time'].value"
+        [seats] = "requirementForm.controls['seats'].value"
+        [isWalkerOrWheelChair] = "isWalkerOrWheelChair"
+        >
+    </app-requested-ride-results>
+    <div class="p-mt-3">
+        <app-heading  [text]="'Available ride'" [headingType]="'h4'">
+        </app-heading>
+<!-- START this code is used for testing purpose by client side after testing we will remove this code -->
+        <div style="float: left;" class="p-mt-3">
+            <app-button [name]="'Show response'"
+                (onClick)="openModalToShowResponse()"
+                [cls]="'blue-text-btn'">
+            </app-button>
+        </div>
+    </div>
+</ng-template>
+<ng-template #showRideRequestResponse>
+    <div>
+        <h3>Ride Request Data</h3>
+        <pre>
+            <p  class="p-mt-3">{{this.requestedData | json}}</p>
+        </pre>
+    </div>
+    <div class="p-mt-3">
+        <h3>Ride Response Data</h3>
+        <pre>
+            <p class="p-mt-3">{{this.responseData | json}}</p>
+        </pre>
+    </div>
+</ng-template>
+<!-- END this code is used for testing purpose by client after testing we remove this code -->

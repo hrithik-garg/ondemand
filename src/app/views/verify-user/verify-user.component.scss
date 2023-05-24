@@ -1,0 +1,10 @@
+@import "src/styles.scss";
+
+.verify-part{
+    ::placeholder{
+        color: $black;
+    }
+}
+.field-margin{
+  margin-top: $field-margin-top;
+}

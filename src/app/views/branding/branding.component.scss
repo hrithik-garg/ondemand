@@ -1,0 +1,88 @@
+@import "src/styles.scss";
+
+.branding-container{
+    position: relative;
+    min-height: 8.625rem;
+    background-image: url('/assets/img/blue_background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+.branding-content{
+    padding-top: 2.8rem;
+    padding-bottom: 2.8rem;
+}
+.branding-left-part{
+    padding-left: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.branding-right-part{
+    display: flex;
+    justify-content: start;
+    align-items: end;
+}
+.branding-logo{
+    margin-bottom: .3125rem;
+    img{
+        height: 3.125rem;
+        width: 2.5rem;
+    }
+}
+.branding-text{
+    color: $white;
+    font-weight: 600;
+    font-size: 1.5rem;
+    span{
+        font-weight: 500;
+        font-size: 1rem;
+    }
+}
+.branding-app-store-imgs{
+    img{
+        width: 10rem;
+        height: 3.5rem;
+        border-radius: 3.875rem;
+    }
+}
+.branding-logo{
+    p{
+        font-weight: 700;
+        font-size: 4.25rem;
+    }
+}
+@media screen and (max-width: $tablet-max){
+    .branding-left-part{
+        width: 100%;
+        padding-left: 0%;
+    }
+    .branding-right-part{
+        width: 100%;
+        justify-content: center;
+    }
+}
+@media screen and (max-width: $mobile-max){
+    .branding-app-store-imgs{
+        img{
+            width: 9rem;   
+        }
+    }
+    .branding-content{
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+    .branding-text{
+        font-size: 1.25rem;
+    }
+    .branding-left-part{
+        flex-direction: column;
+        text-align: center;
+    }
+    .branding-right-part{
+        padding-top: 1rem;
+        padding-bottom: 1.5rem;
+    }
+}
+
+

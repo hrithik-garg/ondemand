@@ -1,0 +1,16 @@
+@import "src/styles.scss";
+
+.ongoing-rides {
+    height: 6.3125rem;
+    border: 0.0625rem solid $border-color;
+    background: $gray-background;
+    border-radius: 0.625rem;
+
+    .loc-time {
+        font-size: 0.875rem;
+    }
+}
+
+.see-details-container {
+    padding-left: 2.5rem;
+}

@@ -1,0 +1,13 @@
+@import "src/styles.scss";
+
+.google-map{
+    margin-top: 1.25rem;
+    height: 100%;
+    width: 100%;
+    border-radius: .25rem;
+}
+@media screen and (max-width: $small-mobile-max){
+    .google-map{
+        height: 18.4375rem;
+    }
+}

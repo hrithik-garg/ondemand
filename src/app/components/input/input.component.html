@@ -1,0 +1,14 @@
+<span class="default-input" 
+    [ngClass]="control?.invalid && control?.touched ? 'p-input-icon-right' : iconPositionClass">
+    <i [class]="iconStyleCls"
+       [ngClass]="control?.invalid && control?.touched ? 'pi pi-exclamation-circle input-icon' : iconClass">
+    </i>
+    <input type="{{type}}" 
+        placeholder="{{placeholder}}"
+        [ngClass]="{ 'ng-invalid invalid-input': control?.invalid && control?.touched }" 
+        [class]="styleCls"
+        [formControl]="control" 
+        pInputText 
+        (keyup)="onKeyUp($event)">
+    <small *ngIf="control?.invalid && control?.touched && inputType == 'formField'" class="p-error">{{control | validationError: label}}</small>
+</span>

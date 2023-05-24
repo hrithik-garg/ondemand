@@ -1,0 +1,18 @@
+<section class="main-banner-container" [ngStyle]="{minHeight: isCommunitySelected? '17.375rem': '23.5rem'}">
+    <div class="main-banner-background-effect" [ngStyle]="{minHeight: isCommunitySelected? '17.375rem': '23.5rem'}">
+        <div class="main-banner-content">
+            <div class="main-banner-heading">  
+                <p>
+                    {{'commMainBannerHeading.first' | translate}} <br> {{'commMainBannerHeading.second' | translate}} <span>{{'commMainBannerHeading.third' | translate}}</span>
+                    {{'commMainBannerHeading.fourth' | translate}} <span>{{'commMainBannerHeading.fifth' | translate}}</span> {{'commMainBannerHeading.sixth' | translate}}
+                </p> 
+            </div>
+            <div class="main-banner-fields">                 
+                <app-button
+                    name = "{{'callTxt' | translate}} (+49 1234567890)"
+                    [cls] = "'shadow'">
+                </app-button>
+            </div>
+        </div>
+    </div>
+</section>
